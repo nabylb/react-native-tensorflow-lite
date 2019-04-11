@@ -155,7 +155,7 @@ public class TFLiteImageRecognizer implements Classifier {
         List<WritableMap> results = new ArrayList<>();
 
         for (int i = 0; i < labelList.size(); ++i) {
-            float confidence = (labelProbArray[0][i] * 100) / 127.0 f;
+            float confidence = (labelProbArray[0][i] * 100) / 127.0f;
             if (confidence > THRESHOLD) {
                 WritableMap entry = new WritableNativeMap();
                 entry.putString("id", String.valueOf(i));
