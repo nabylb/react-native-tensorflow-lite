@@ -1,0 +1,1 @@
+../../../../../../TensorFlowLite/Frameworks/tensorflow_lite.framework/Headers/tensorflow/lite/op_resolver.h

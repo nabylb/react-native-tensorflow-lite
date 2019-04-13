@@ -4,29 +4,31 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "npx jest --verbose",
+    "test:watch": "jest --watch --verbose",
+    "test:coverage": "jest --coverage",
+    "test:e2e:ios": "detox test -c ios.sim.debug",
+    "test:e2e:ios:build": "detox build",
+    "test:e2e:android": "detox test -c android.emu.debug",
+    "test:update": "npm test -- -u",
     "ios": "react-native run-ios --simulator \"iPhone X\"",
     "device": "react-native run-ios --device",
     "android": "react-native run-android",
-    "clean": "watchman watch-dell-all; rm -rf ./node_modules; rm package-lock.json; npm install; rm -rf $TMPDIR/react-* $TMPDIR/metro-* $TMPDIR/haste-*; react-native link; npm start -- --reset-cache",
-    "test": "jest",
-    "lint": "eslint ."
+    "androidsim": "~/Library/Android/sdk/emulator/emulator -avd Pixel_2_XL_API_28 &",
+    "metro": "npm start -- --reset-cache"
   },
   "dependencies": {
-    "@babel/runtime": "^7.4.2",
-    "react": "16.8.3",
-    "react-native": "0.59.1",
-    "react-native-tensorflow-lite": "file:../../"
+    "react": "16.6.3",
+    "react-native": "0.58.6",
+    "react-native-camera": "^2.3.0",
+    "react-native-tensorflow-lite": "^1.0.6"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.0",
-    "@react-native-community/eslint-config": "^0.0.3",
-    "babel-jest": "^24.5.0",
-    "babel-plugin-module-resolver": "^3.2.0",
-    "escape-string-regexp": "^1.0.5",
-    "eslint": "^5.15.3",
-    "jest": "^24.5.0",
-    "metro-react-native-babel-preset": "^0.53.1",
-    "react-test-renderer": "16.8.3"
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "24.5.0",
+    "jest": "24.5.0",
+    "metro-react-native-babel-preset": "0.53.1",
+    "react-test-renderer": "16.6.3"
   },
   "jest": {
     "preset": "react-native"

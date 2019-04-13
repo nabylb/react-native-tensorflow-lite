@@ -1,0 +1,1 @@
+../../../../../../../TensorFlowLite/Frameworks/tensorflow_lite.framework/Headers/tensorflow/lite/schema/schema_generated.h
